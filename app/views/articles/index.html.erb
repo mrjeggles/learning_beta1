@@ -20,7 +20,14 @@
         <td><%= article.subject %></td>
         <td><%= article.topic %></td>
         <td><%= article.notes %></td>
-        <td><%= link_to article.reference, article.reference, target: '_blank' %></td>
+        <td><%= if article.reference[0,7].eql? "http://" 
+                  link_to article.reference, article.reference, target: '_blank'
+                elsif article.reference[0,8].eql? "https://"
+                  link_to article.reference, article.reference, target: '_blank'      
+                else 
+                   article.reference
+                end      
+        %></td>
         <td><%= article.published_at %></td>
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
