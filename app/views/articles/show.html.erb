@@ -17,7 +17,13 @@
 
 <p>
   <strong>Reference:</strong>
-  <%= @article.reference %>
+  <%= if @article.reference[0,7].eql? "http://" 
+                  link_to @article.reference, @article.reference, target: '_blank'
+                elsif @article.reference[0,8].eql? "https://"
+                  link_to @article.reference, @article.reference, target: '_blank'      
+                else 
+                   @article.reference
+                end   %>
 </p>
 
 <p>
