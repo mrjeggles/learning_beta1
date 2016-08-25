@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# added to get readline to work and open the console (rails console) 25Aug16
+gem 'rb-readline'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.8'
 
