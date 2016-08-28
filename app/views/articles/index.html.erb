@@ -23,7 +23,10 @@
         <td><%= if article.reference[0,7].eql? "http://" 
                   link_to article.reference, article.reference, target: '_blank'
                 elsif article.reference[0,8].eql? "https://"
-                  link_to article.reference, article.reference, target: '_blank'      
+                  link_to article.reference, article.reference, target: '_blank'
+                #elsif article.reference.split(//).last(4).join("").eql? ".pdf"
+                  #link_to article.reference :format => :pdf
+                  #link_to article.reference, article.reference, target: '_blank'  
                 else 
                    article.reference
                 end      
