@@ -1,5 +1,8 @@
 Beta1::Application.routes.draw do
+  root :to => "articles#index"
   resources :articles
+  resources :users
+end  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -55,4 +58,3 @@ Beta1::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
